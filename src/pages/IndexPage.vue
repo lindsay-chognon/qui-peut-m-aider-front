@@ -2,14 +2,15 @@
   <div class="q-pa-md row items-start q-gutter-md ">
     <CardsPrestations v-for="prestation of prestations"
                       :key="prestation.id "
-                      :titre="prestation.titre"
-                      :description="prestation.description"
-                      :ville="prestation.ville"
-                      :taux_horaire="prestation.taux_horaire"
-    >
+                      :prestation="prestation"
 
+    >
     </CardsPrestations>
   </div>
+
+
+
+
 
 </template>
 
@@ -28,7 +29,7 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get(`http://localhost:8001/api/prestations`);
+      const res = await axios.get(`http://localhost:8000/api/prestations`);
       this.prestations = res.data['hydra:member'];
       console.log(res.data['hydra:member'])
     } catch (error) {
