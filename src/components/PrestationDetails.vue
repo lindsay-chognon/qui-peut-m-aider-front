@@ -1,7 +1,12 @@
 <template>
-  <h1 class="text-right">{{ prestation.titre }}</h1>
-  <p>{{ prestation.description }}</p>
-
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h2 class="text-center col-6">{{ prestation.titre }}</h2>
+      <p>{{ prestation.description }}</p>
+    </div>
+    <div class="col"></div>
+  </div>
 
 </template>
 
