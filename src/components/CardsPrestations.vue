@@ -3,7 +3,7 @@
       <img src="https://cdn.quasar.dev/img/mountains.jpg">
       <q-card-section>
         <div class="text-h6">{{ prestation.titre }}</div>
-        <div class="text-subtitle2">{{ prestation.ville }}</div>
+        <div class="text-subtitle2">{{ prestation.ville.code_postal }} {{ prestation.ville.ville }}</div>
         <div class="text-subtitle2">{{ prestation.taux_horaire }} € </div>
       </q-card-section>
 
@@ -28,4 +28,5 @@ export default {
     }
   }
 }
+
 </script>
