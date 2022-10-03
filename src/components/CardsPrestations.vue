@@ -10,7 +10,7 @@
       <q-separator dark />
 
       <q-card-actions>
-        <router-link :to="{ name: 'prestation', params: { id: prestation.id }}"><q-btn @click="prestationDetails()" flat>Action 1</q-btn></router-link>
+        <router-link :to="{ name: 'prestation', params: { id: prestation.id }}"><q-btn @click="prestationDetails()" flat text-color="white">En savoir plus</q-btn></router-link>
 
       </q-card-actions>
 
