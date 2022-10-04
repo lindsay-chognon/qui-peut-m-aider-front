@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header class="bg-white" elevated>
       <q-toolbar>
         <q-btn
           flat
@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
+        <q-toolbar-title class="text-purple-5">
           Quasar App
         </q-toolbar-title>
 
@@ -38,7 +38,8 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="window-width row justify-center items-center"
+                      style="background: linear-gradient(#8274C5, #5A4A9F);">
       <router-view />
     </q-page-container>
   </q-layout>
