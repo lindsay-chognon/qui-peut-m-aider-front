@@ -1,5 +1,5 @@
 <template>
-    <q-card dark bordered class="bg-grey-9 my-card">
+    <q-card  class="my-card">
       <img src="https://cdn.quasar.dev/img/mountains.jpg">
       <q-card-section>
         <div class="text-h6">{{ prestation.titre }}</div>
@@ -10,7 +10,7 @@
       <q-separator dark />
 
       <q-card-actions>
-        <router-link :to="{ name: 'prestation', params: { id: prestation.id }}"><q-btn @click="prestationDetails()" flat text-color="white">En savoir plus</q-btn></router-link>
+        <router-link :to="{ name: 'prestation', params: { id: prestation.id }}"><q-btn @click="prestationDetails()" flat>En savoir plus</q-btn></router-link>
 
       </q-card-actions>
 
