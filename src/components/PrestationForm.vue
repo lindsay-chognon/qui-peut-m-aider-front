@@ -17,7 +17,7 @@
                 class="q-pa-md"
                 square
                 clearable
-                v-model="titre"
+                v-model="form.titre"
                 type="text"
                 label="Titre"
                 :rules="[val => !!val || 'Obligatoire']">
@@ -29,7 +29,7 @@
                 clearable
                 outlined
                 :rules="[val => !!val || 'Obligatoire']"
-                v-model="description"
+                v-model="form.description"
                 filled
                 type="textarea"
               />
@@ -39,7 +39,7 @@
                   class="q-pa-md col-6"
                   square
                   :rules="[val => !!val || 'Obligatoire']"
-                  v-model="taux_horaire"
+                  v-model="form.taux_horaire"
                   type="number"
                   step="0.5"
                   label="Taux horaire">
@@ -49,7 +49,7 @@
                   class="q-pa-md col-6"
                   square
                   clearable
-                  v-model="photo"
+                  v-model="form.photo"
                   label="Photo"
                 />
               </div>
@@ -59,15 +59,16 @@
                   square
                   clearable
                   :rules="[val => !!val || 'Obligatoire']"
-                  v-model="ville"
+                  v-model="form.ville"
                   type="text"
                   label="Ville">
                 </q-input>
 
               <q-toggle
-                v-model="statut"
+                v-model="form.statut"
                 color="green"
                 label="Mettre mon annonce en ligne (vous pourrez modifier cela à tout moment)"
+                value=1
               />
 
             </q-form>
@@ -75,24 +76,26 @@
           </q-card-section>
 
           <q-card-actions class="q-px-lg">
-<div class="row items-center justify-center">
-  <q-btn
-    unelevated
-    size="lg"
-    color="purple-4"
-    class="text-white q-mb-md"
-    label="Proposer la prestation"
-    style="width: 20em;"
-  />
-  <q-btn
-    unelevated
-    size="lg"
-    color="purple-4"
-    class="text-white q-mb-md"
-    label="Retour"
-    style="width: 20em;"
-  />
-</div>
+
+            <div class="row items-center justify-center">
+              <q-btn
+                unelevated
+                size="lg"
+                color="purple-4"
+                class="text-white q-mb-md"
+                label="Proposer la prestation"
+                style="width: 20em;"
+                @click.prevent="submit()"
+              />
+              <q-btn
+                unelevated
+                size="lg"
+                color="purple-4"
+                class="text-white q-mb-md"
+                label="Retour"
+                style="width: 20em;"
+              />
+            </div>
 
 
           </q-card-actions>
@@ -107,20 +110,37 @@
 
 <script>
 
-import { reactive } from 'vue';
+import axios from "axios";
 
 export default {
 
-  data () {
+  data() {
     return {
-      titre: '',
-      taux_horaire: '',
-      photo: '',
-      ville: '',
-      description: '',
-      statut: true
+      form: {
+        titre: '',
+        description: '',
+        taux_horaire: '',
+        photo: '',
+        statut: true,
+      }
+
     }
   },
+  methods: {
+    submit(){
+      axios.post('http://localhost:8000/api/prestations', this.form, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => {
+          console.log(response)
+        })
+        .catch(error => {
+          console.log(error.response)
+        });
+    }
+  }
 }
 </script>
 
