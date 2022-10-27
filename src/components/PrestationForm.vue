@@ -54,15 +54,17 @@
                 />
               </div>
 
-                <q-input
-                  class="q-pa-md"
-                  square
-                  clearable
-                  :rules="[val => !!val || 'Obligatoire']"
-                  v-model="form.ville"
-                  type="text"
-                  label="Ville">
-                </q-input>
+              <q-input
+                class="q-pa-md"
+                square
+                clearable
+                :rules="[val => !!val || 'Obligatoire']"
+                v-model="form.code_postal"
+                type="text"
+                label="CP">
+              </q-input>
+
+                <ville-select></ville-select>
 
               <q-toggle
                 v-model="form.statut"
@@ -111,17 +113,17 @@
 <script>
 
 import axios from "axios";
+import VilleSelect from "components/VilleSelect";
 
 export default {
-
+  components: {
+    VilleSelect
+  },
   data() {
     return {
       form: {
-        titre: '',
-        description: '',
-        taux_horaire: '',
-        photo: '',
-        statut: true,
+        ville: '',
+        code_postal: ''
       }
 
     }
@@ -142,6 +144,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style>
