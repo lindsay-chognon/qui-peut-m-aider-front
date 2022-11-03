@@ -10,7 +10,9 @@
       <q-separator dark />
 
       <q-card-actions>
-        <router-link :to="{ name: 'prestation', params: { id: prestation.id }}"><q-btn @click="prestationDetails()" flat>En savoir plus</q-btn></router-link>
+        <router-link :to="{ name: 'prestation', params: { id: prestation.id }}">
+          <q-btn flat>En savoir plus</q-btn>
+        </router-link>
 
       </q-card-actions>
 
@@ -18,15 +20,11 @@
 </template>
 
 <script>
+
 export default {
   props: {
     prestation: Object
   },
-  methods: {
-    prestationDetails() {
-      console.log(this.prestation)
-    }
-  }
 }
 
 </script>

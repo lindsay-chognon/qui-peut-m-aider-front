@@ -3,7 +3,6 @@
     <CardsPrestations v-for="prestation of prestations"
                       :key="prestation.id "
                       :prestation="prestation"
-
     >
     </CardsPrestations>
   </div>
