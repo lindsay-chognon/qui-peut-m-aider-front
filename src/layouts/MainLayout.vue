@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title class="text-purple-5">
-          Quasar App
+          Skill &Share
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
