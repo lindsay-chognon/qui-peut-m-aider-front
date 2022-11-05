@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md row items-start q-gutter-md ">
+  <div class="q-pa-md row justify-center q-gutter-md ">
     <CardsPrestations v-for="prestation of prestations"
                       :key="prestation.id "
                       :prestation="prestation"
