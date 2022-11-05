@@ -9,6 +9,7 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
+          class="text-purple-5"
         />
 
         <q-toolbar-title class="text-purple-5">
