@@ -2,6 +2,16 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white" elevated>
       <q-toolbar>
+        <q-avatar>
+          <img src="~assets/favicon.png" alt="Logo de Skill &Share"/>
+        </q-avatar>
+
+        <q-toolbar-title class="text-purple-5">
+          Skill &Share
+        </q-toolbar-title>
+
+        <div>Quasar v{{ $q.version }}</div>
+
         <q-btn
           flat
           dense
@@ -11,17 +21,12 @@
           @click="toggleLeftDrawer"
           class="text-purple-5"
         />
-
-        <q-toolbar-title class="text-purple-5">
-          Skill &Share
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
+      side="right"
       bordered
     >
       <q-list>
