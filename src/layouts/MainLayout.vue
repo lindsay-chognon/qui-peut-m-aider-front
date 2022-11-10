@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white" elevated>
       <q-toolbar>
-        <q-avatar>
+        <q-avatar class="q-ml-lg">
           <img src="~assets/favicon.png" alt="Logo de Skill &Share"/>
         </q-avatar>
 
@@ -10,7 +10,13 @@
           Skill &Share
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn
+          to="/login"
+          flat
+          icon-right="account_circle"
+          label="Se connecter"
+          class="bg-purple-5 q-mr-xl"
+        />
 
         <q-btn
           flat
@@ -19,7 +25,7 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
-          class="text-purple-5"
+          class="text-purple-5 q-mr-lg"
         />
       </q-toolbar>
     </q-header>
