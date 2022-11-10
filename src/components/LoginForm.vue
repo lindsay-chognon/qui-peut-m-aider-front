@@ -11,12 +11,12 @@
             <h4 class="text-h5 text-white q-my-md">Se connecter</h4>
           </q-card-section>
           <q-card-section>
-            <q-form class="q-px-sm q-pt-xl">
+            <q-form @submit.prevent="login" class="q-px-sm q-pt-xl">
 
               <q-input
                 square
                 clearable
-                v-model="email"
+                v-model="user.username"
                 type="email"
                 label="Email"
                 :rules="[val => !!val || 'Obligatoire']"
@@ -29,7 +29,7 @@
               <q-input
                 square
                 clearable
-                v-model="password"
+                v-model="user.password"
                 type="password"
                 label="Password"
                 :rules="[val => !!val || 'Obligatoire']"
@@ -42,7 +42,7 @@
             </q-form>
           </q-card-section>
           <q-card-actions class="q-px-lg">
-            <q-btn unelevated size="lg" color="purple-4" class="full-width text-white" label="Sign In" />
+            <q-btn @click="login" unelevated size="lg" color="purple-4" class="full-width text-white" label="Sign In" />
           </q-card-actions>
           <q-card-section class="text-center q-pa-sm">
             <p class="text-grey-6">Mot de passe oublié ?</p>
@@ -55,12 +55,33 @@
 </template>
 
 <script>
+
+// je peux importer directement grâce à index.js
+import { accountService } from "src/_services"
+
 export default {
   data () {
     return {
-      email: '',
-      username: '',
-      password: ''
+      user: {
+        username: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    login() {
+      console.log(this.user)
+      accountService.login(this.user)
+        .then(res => {
+          console.log(res.data)
+          accountService.saveToken(res.data.token)
+          this.$router.push('/prestations')
+        })
+        .catch(err => {
+          console.log("erreur")
+          console.log(err)
+        })
+
     }
   }
 }
