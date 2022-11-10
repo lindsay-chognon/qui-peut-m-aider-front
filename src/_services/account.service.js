@@ -26,10 +26,16 @@ let isLogged = () => {
   return !! token
 }
 
+let getToken = () => {
+  let jwt = localStorage.getItem('token')
+  return jwt
+}
+
 // exporte tout dans accountService
 export const accountService = {
   login,
   logout,
   saveToken,
-  isLogged
+  isLogged,
+  getToken
 }
