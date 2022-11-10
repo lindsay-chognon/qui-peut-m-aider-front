@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { accountService } from "src/_services";
 import axios from "axios";
 import CardsPrestations from "components/CardsPrestations";
 export default {
@@ -23,13 +24,21 @@ export default {
     };
   },
   async created() {
-    try {
-      const res = await axios.get(`http://localhost:8000/api/prestations`);
-      this.prestations = res.data['hydra:member'];
-      console.log(res.data['hydra:member'])
-    } catch (error) {
-      console.log(error);
+    if (accountService.isLogged()) {
+      const jwt = accountService.getToken()
+      try {
+        const res = await axios.get(`http://localhost:8000/api/prestations`, {
+          headers: {
+            'Authorization': `Bearer ${jwt}`
+          }
+        });
+        this.prestations = res.data['hydra:member'];
+        console.log(res.data['hydra:member'])
+      } catch (error) {
+        console.log(error);
+      }
     }
+
   },
 };
 </script>
