@@ -73,8 +73,8 @@ export default {
       console.log(this.user)
       accountService.login(this.user)
         .then(res => {
-          console.log(res.data)
           accountService.saveToken(res.data.token)
+          this.$store.commit('changeIsLogged')
           this.$router.push('/prestations')
         })
         .catch(err => {
