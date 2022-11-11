@@ -11,6 +11,7 @@ let login = (credentials) => {
 // on supprime le token du localstorage
 let logout = () => {
   localStorage.removeItem('token')
+  this.$store.commit('changeIsLogged')
 }
 
 // enregistrer le token dans le localstorage
