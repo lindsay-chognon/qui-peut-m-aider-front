@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" style="background: linear-gradient(#8274C5, #5A4A9F);">
     <q-header class="bg-white" elevated>
       <q-toolbar>
         <q-avatar class="q-ml-lg">
@@ -63,7 +63,7 @@
     </q-drawer>
 
     <q-page-container class="window-width row justify-center items-center"
-                      style="background: linear-gradient(#8274C5, #5A4A9F);">
+                      >
       <router-view />
     </q-page-container>
   </q-layout>
