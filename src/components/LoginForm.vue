@@ -42,7 +42,7 @@
             </q-form>
           </q-card-section>
           <q-card-actions class="q-px-lg">
-            <q-btn @click="login" unelevated size="lg" color="purple-4" class="full-width text-white" label="Sign In" />
+            <q-btn @click="login" unelevated size="lg" color="purple-4" class="full-width text-white" label="Se connecter" />
           </q-card-actions>
           <q-card-section class="text-center q-pa-sm">
             <p class="text-grey-6">Mot de passe oublié ?</p>
