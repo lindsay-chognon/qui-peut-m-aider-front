@@ -11,12 +11,24 @@
         </q-toolbar-title>
 
         <q-btn
+          v-if="!getIsLogged"
           to="/login"
           flat
           icon-right="account_circle"
           label="Se connecter"
           class="bg-purple-5 q-mr-xl"
         />
+
+        <q-btn
+          v-if="getIsLogged"
+          to="/"
+          flat
+          icon-right="account_circle"
+          label="Se déconnecter"
+          class="bg-purple-5 q-mr-xl"
+          @click="logout"
+        />
+
 
         <q-btn
           flat
@@ -58,8 +70,12 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
+import { accountService } from "src/_services";
+import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex'
+
 
 const linksList = [
   {
@@ -68,41 +84,28 @@ const linksList = [
     icon: 'school',
     link: 'https://quasar.dev'
   },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
 ]
 
-export default defineComponent({
+export default ({
   name: 'MainLayout',
 
   components: {
     EssentialLink
   },
+  computed: {
+    ...mapMutations(['changeIsLogged']),
+    ...mapGetters(['getIsLogged']),
+  },
+
+  methods: {
+    logout() {
+      accountService.logout()
+    }
+  },
 
   setup () {
     const leftDrawerOpen = ref(false)
+
 
     return {
       essentialLinks: linksList,
