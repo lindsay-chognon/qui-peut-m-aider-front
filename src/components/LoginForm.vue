@@ -75,7 +75,7 @@ export default {
         .then(res => {
           accountService.saveToken(res.data.token)
           this.$store.commit('changeIsLogged')
-          this.$router.push('/prestations')
+          this.$router.push('/dashboard')
         })
         .catch(err => {
           console.log("erreur")
