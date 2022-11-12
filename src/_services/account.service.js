@@ -41,7 +41,7 @@ let isExpired = () => {
       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
 
-
+    console.log(JSON.parse(jsonPayload))
     return Date.now() / 1000 > JSON.parse(jsonPayload).exp;
 
 
