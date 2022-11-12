@@ -96,6 +96,7 @@
                 class="text-white q-mb-md"
                 label="Retour"
                 style="width: 20em;"
+                @click.prevent="retour()"
               />
             </div>
 
@@ -141,6 +142,9 @@ export default {
         .catch(error => {
           console.log(error.response)
         });
+    },
+    retour() {
+      this.$router.go(-1)
     }
   }
 }
