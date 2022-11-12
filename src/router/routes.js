@@ -24,7 +24,8 @@ const routes = [
       {
         path: 'prestation/add',
         name:'prestationAdd',
-        component: () => import('pages/PrestationAddPage.vue')
+        component: () => import('pages/PrestationAddPage.vue'),
+        beforeEnter: authGuard
       },
       {
         path: 'login',
