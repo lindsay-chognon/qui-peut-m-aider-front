@@ -1,18 +1,22 @@
 <template>
 
-  <h1>Mon espace connecté</h1>
+  <div class="q-pa-md row justify-center q-gutter-md ">
+    <h1>Mon espace connecté</h1>
+  </div>
+
+  <buttonAdd/>
+
+
 </template>
 
 <script>
-import axios from "axios";
-import CardsPrestations from "components/CardsPrestations";
+import ButtonAdd from "components/ButtonAdd";
+
 export default {
   name: "App",
+  components: {
+    ButtonAdd
+  }
 };
 </script>
 
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 250px
-</style>
