@@ -6,9 +6,6 @@
         <q-card square class="shadow-24" style="width:45em;">
           <q-card-section class="bg-deep-purple-7">
             <h4 class="text-h5 text-white q-my-md">Proposer une prestation</h4>
-            <div class="absolute-bottom-right q-pr-md" style="transform: translateY(50%);">
-              <q-btn fab icon="add" color="purple-4" />
-            </div>
           </q-card-section>
           <q-card-section>
 
@@ -64,7 +61,15 @@
                 label="CP">
               </q-input>
 
-                <ville-select></ville-select>
+              <q-input
+                class="q-pa-md"
+                square
+                clearable
+                :rules="[val => !!val || 'Obligatoire']"
+                v-model="form.ville"
+                type="text"
+                label="Ville">
+              </q-input>
 
               <q-toggle
                 v-model="form.statut"
@@ -117,9 +122,6 @@ import axios from "axios";
 import VilleSelect from "components/VilleSelect";
 
 export default {
-  components: {
-    VilleSelect
-  },
   data() {
     return {
       form: {
