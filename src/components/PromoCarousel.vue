@@ -3,9 +3,10 @@
 
     <q-carousel
       v-model="slide"
+      :autoplay=10000
+      infinite
       swipeable
       animated
-      :control-type="controlType"
       control-color="purple"
       navigation
       padding
@@ -13,28 +14,33 @@
       height="80%"
       class="text-purple rounded-borders carousel"
     >
+
       <q-carousel-slide name="style" class="column no-wrap flex-center">
           <img src="~assets/accueil1.png">
         <div class="q-mt-md text-center text-black">
           {{ lorem }}
+          <ButtonDiscover></ButtonDiscover>
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="tv" class="column no-wrap flex-center">
-        <q-icon name="live_tv" size="56px" />
+        <img src="~assets/accueil2.png">
         <div class="q-mt-md text-center text-black">
           {{ lorem }}
+          <ButtonDiscover></ButtonDiscover>
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="layers" class="column no-wrap flex-center">
-        <q-icon name="layers" size="56px" />
+        <img src="~assets/accueil3.png">
         <div class="q-mt-md text-center text-black">
           {{ lorem }}
+          <ButtonDiscover></ButtonDiscover>
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="map" class="column no-wrap flex-center">
-        <q-icon name="terrain" size="56px" />
+        <img src="~assets/accueil4.png">
         <div class="q-mt-md text-center text-black">
           {{ lorem }}
+          <ButtonDiscover></ButtonDiscover>
         </div>
       </q-carousel-slide>
     </q-carousel>
@@ -43,9 +49,13 @@
 
 <script>
 import { ref } from 'vue'
+import ButtonDiscover from "components/ButtonDiscover";
 
 export default {
   name: 'PromoCarousel',
+  components: {
+    ButtonDiscover
+  },
   setup () {
     return {
       slide: ref('style'),
@@ -57,7 +67,7 @@ export default {
 
 <style>
 img {
-  width: 30%;
+  width: 28%;
   height: auto;
 }
 
