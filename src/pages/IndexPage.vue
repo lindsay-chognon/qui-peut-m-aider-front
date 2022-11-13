@@ -1,6 +1,6 @@
 <template>
 
-  <h1>Accueil</h1>
+  <img src="~assets/logo-clair.png">
 
   <PromoCarousel></PromoCarousel>
 </template>
@@ -20,6 +20,10 @@ export default {
 .my-card
   width: 100%
   max-width: 250px
+
+img
+  width: 15%
+  height: auto
 </style>
 
 
