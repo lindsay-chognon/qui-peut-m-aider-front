@@ -1,8 +1,5 @@
 <template>
-  <div class="q-pa-md row items-start q-gutter-md ">
     <prestation-details :prestation="prestation"></prestation-details>
-    <booking-banner></booking-banner>
-  </div>
 </template>
 
 <script>
@@ -13,7 +10,6 @@ export default {
   name: "App",
   components: {
     PrestationDetails,
-    BookingBanner
   },
   data() {
     return {
