@@ -1,13 +1,18 @@
 <template>
 
   <h1>Accueil</h1>
+
+  <PromoCarousel></PromoCarousel>
 </template>
 
 <script>
-import axios from "axios";
-import CardsPrestations from "components/CardsPrestations";
+import PromoCarousel from "components/PromoCarousel";
 export default {
   name: "App",
+  components: {
+    PromoCarousel
+  }
+
 };
 </script>
 
