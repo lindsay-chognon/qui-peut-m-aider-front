@@ -14,9 +14,12 @@ let updatePrestation = (prestation) => {
 }
 
 let createVille = (ville) => {
+  let token = accountService.getToken()
   return Axios.post('/api/villes', ville, {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+
     }
   })
 }
