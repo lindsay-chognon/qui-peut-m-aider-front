@@ -17,7 +17,11 @@ let createVille = (ville) => {
 }
 
 let createPrestation = (prestation) => {
-  return Axios.post('/api/prestations', prestation)
+  return Axios.post('/api/prestations', prestation, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
 }
 
 let deletePrestation = (id) => {
