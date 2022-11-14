@@ -7,6 +7,21 @@
         icon="add"
         label="Ajouter une prestation"
         size="xl"
+        class="q-ma-md"
+      />
+    </router-link>
+
+  </div>
+
+  <div class="row justify-center">
+
+    <router-link :to="{ name: 'prestations' }">
+      <q-btn
+        color="deep-orange-5"
+        icon="visibility"
+        label="Consulter les prestations"
+        size="xl"
+        class="q-ma-md"
       />
     </router-link>
 
