@@ -1,8 +1,8 @@
 <template>
 
-  <div class="q-pa-xl row items-start">
+  <div class="q-pa-lg row justify-center">
     <q-card class="my-card">
-      <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+      <q-img src="https://cdn.quasar.dev/img/mountains.jpg" />
 
       <q-card-section>
         <q-btn
@@ -15,23 +15,22 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Cafe Basilico
+            {{ prestation.titre }}
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
-            250 ft
+            {{ prestation.ville.ville }}
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          $・Italian, Cafe
+          User
         </div>
         <div class="text-caption text-grey">
-          Small plates, salads & sandwiches in an intimate setting.
+          {{ prestation.description }}
         </div>
       </q-card-section>
 
@@ -39,6 +38,10 @@
 
       <q-card-actions>
         <q-btn flat round icon="event" />
+        <li v-for="disponibilite in prestation.disponibilites" :key="disponibilite.id">
+          {{ disponibilite.datetime_debut }}
+          {{ disponibilite.datetime_fin }}
+        </li>
         <q-btn flat color="primary">
           Reserve
         </q-btn>
@@ -57,5 +60,5 @@ export default {
 
 <style lang="sass" scoped>
 .my-card
-  width: 100%
+  width: 60%
 </style>
