@@ -1,4 +1,5 @@
 import Axios from './caller.services'
+import {accountService} from "src/_services/account.service";
 
 let getAllPrestations = () => {
   return Axios.get('/api/prestations')
@@ -13,13 +14,20 @@ let updatePrestation = (prestation) => {
 }
 
 let createVille = (ville) => {
-  return Axios.post('/api/villes', ville)
+  return Axios.post('/api/villes', ville, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
 }
 
 let createPrestation = (prestation) => {
+  let token = accountService.getToken()
   return Axios.post('/api/prestations', prestation, {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+
     }
   })
 }
