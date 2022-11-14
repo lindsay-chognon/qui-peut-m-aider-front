@@ -28,8 +28,8 @@ let isLogged = () => {
 }
 
 let getToken = () => {
-  let jwt = localStorage.getItem('token')
-  return jwt
+  let token = localStorage.getItem('token')
+  return token
 }
 
 let isExpired = () => {
