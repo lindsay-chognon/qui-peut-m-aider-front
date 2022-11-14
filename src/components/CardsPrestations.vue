@@ -4,7 +4,7 @@
       <q-card-section>
         <div class="text-h6">{{ prestation.titre }}</div>
         <div class="text-subtitle2">{{ prestation.ville.code_postal }} {{ prestation.ville.ville }}</div>
-        <div class="text-subtitle2">{{ prestation.taux_horaire }} € </div>
+        <div class="text-subtitle2">{{ prestation.taux_horaire }} {{ this.$store.getters.getCurrencySymbol }} </div>
       </q-card-section>
 
       <q-separator dark />
@@ -13,6 +13,7 @@
         <router-link :to="{ name: 'prestation', params: { id: prestation.id }}">
           <q-btn flat>En savoir plus</q-btn>
         </router-link>
+
 
       </q-card-actions>
 
