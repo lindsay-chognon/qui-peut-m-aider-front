@@ -17,11 +17,12 @@
 
     <router-link :to="{ name: 'prestations' }">
       <q-btn
+        outline
         color="deep-orange-5"
         icon="visibility"
         label="Consulter les prestations"
         size="xl"
-        class="q-ma-md"
+        class="q-ma-md bg-white"
       />
     </router-link>
 
