@@ -62,7 +62,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container class="window-width row justify-center items-center"
+    <q-page-container class="window-width column justify-center items-center"
                       >
       <router-view />
     </q-page-container>
