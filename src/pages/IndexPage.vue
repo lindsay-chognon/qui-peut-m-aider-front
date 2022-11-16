@@ -1,6 +1,8 @@
 <template>
-
+<div class="row justify-center">
   <img src="~assets/logo-clair.png">
+
+</div>
 
   <PromoCarousel></PromoCarousel>
 </template>
@@ -22,7 +24,7 @@ export default {
   max-width: 250px
 
 img
-  width: 15%
+  width: 40%
   height: auto
 </style>
 
