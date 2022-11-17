@@ -42,8 +42,17 @@
           {{ disponibilite.datetime_debut }}
           {{ disponibilite.datetime_fin }}
         </li>
-        <q-btn class="q-mt-md" flat color="primary">
+      </q-card-actions>
+      <q-card-actions>
+        <q-btn
+          color="deep-orange-5">
           Reserve
+        </q-btn>
+        <q-btn
+          color="deep-orange-5"
+          @click.prevent="retour"
+        >
+          Retour
         </q-btn>
       </q-card-actions>
     </q-card>
@@ -55,6 +64,11 @@ export default {
   props: {
     prestation: Object
   },
+  methods: {
+    retour() {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 
