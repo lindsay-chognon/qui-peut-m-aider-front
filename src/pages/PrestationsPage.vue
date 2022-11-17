@@ -51,7 +51,7 @@ export default {
     changeCurrencyToUSD() {
         const res = axios.get(`https://api.apilayer.com/currency_data/live?source=EUR&currencies=USD`, {
           headers: {
-            'apikey': 'MOHQPjF6ctvfTYXaHnfmklG1mF8cOodE'
+            'apikey': 'XuTYyHMrWfp1X2i13TH8HXTkZArQS1Hm'
           }
         });
         const promise = Promise.resolve(res)
@@ -74,7 +74,7 @@ export default {
     changeCurrencyToEUR() {
       const res = axios.get(`https://api.apilayer.com/currency_data/live?source=USD&currencies=EUR`, {
         headers: {
-          'apikey': 'MOHQPjF6ctvfTYXaHnfmklG1mF8cOodE'
+          'apikey': 'XuTYyHMrWfp1X2i13TH8HXTkZArQS1Hm'
         }
       });
       const promise = Promise.resolve(res)
