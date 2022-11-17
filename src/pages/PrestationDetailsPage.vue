@@ -5,7 +5,8 @@
 <script>
 import axios from "axios";
 import PrestationDetails from "components/PrestationDetails";
-import BookingBanner from "components/BookingBanner";
+import {accountService} from "src/_services";
+
 export default {
   name: "App",
   components: {
@@ -18,8 +19,13 @@ export default {
     };
   },
   async created() {
+    const jwt = accountService.getToken()
     try {
-      const res = await axios.get(`http://localhost:8000/api/prestations/${this.id}`);
+      const res = await axios.get(`http://localhost:8000/api/prestations/${this.id}`, {
+        headers: {
+          'Authorization': `Bearer ${jwt}`
+        }
+      });
       this.prestation = res.data;
     } catch (error) {
       console.log(error);
