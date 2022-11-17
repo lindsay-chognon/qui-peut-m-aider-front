@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf" style="background: linear-gradient(#8274C5, #5A4A9F);">
     <q-header class="bg-white" elevated>
       <q-toolbar>
-        <q-avatar class="q-ml-lg">
+        <q-avatar class="q-ml-md">
           <img src="~assets/favicon.png" alt="Logo de Skill &Share"/>
         </q-avatar>
 
