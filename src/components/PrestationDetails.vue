@@ -42,7 +42,7 @@
           {{ disponibilite.datetime_debut }}
           {{ disponibilite.datetime_fin }}
         </li>
-        <q-btn flat color="primary">
+        <q-btn class="q-mt-md" flat color="primary">
           Reserve
         </q-btn>
       </q-card-actions>
@@ -60,5 +60,5 @@ export default {
 
 <style lang="sass" scoped>
 .my-card
-  width: 60%
+  width: 100%
 </style>
