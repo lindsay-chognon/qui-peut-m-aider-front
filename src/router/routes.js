@@ -21,7 +21,6 @@ const routes = [
         props: true,
         name:'prestation',
         component: () => import('pages/PrestationDetailsPage.vue'),
-        beforeEnter: authGuard()
       },
       {
         path: 'prestation/add',
