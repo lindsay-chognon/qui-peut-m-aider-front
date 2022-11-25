@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
+  <div class="q-pa-md q-gutter-sm justify-center">
     <q-banner rounded class="bg-purple-8 text-white">
 
       Vous devrez vous connecter pour réserver.
