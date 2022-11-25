@@ -84,6 +84,12 @@ const linksList = [
     icon: 'school',
     link: 'https://quasar.dev'
   },
+  {
+    title: 'Prestations',
+    caption: 'quasar.dev',
+    icon: 'school',
+    link: 'https://quasar.dev'
+  },
 ]
 
 export default ({
