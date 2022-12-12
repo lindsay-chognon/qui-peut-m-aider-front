@@ -2,9 +2,11 @@
   <q-layout view="lHh Lpr lFf" style="background: linear-gradient(#8274C5, #5A4A9F);">
     <q-header class="bg-white" elevated>
       <q-toolbar>
-        <q-avatar class="q-ml-md">
-          <img src="~assets/favicon.png" alt="Logo de Skill &Share"/>
-        </q-avatar>
+        <router-link :to="{ name: '/' }">
+          <q-avatar class="q-ml-md">
+            <img src="~assets/favicon.png" alt="Logo de Skill &Share"/>
+          </q-avatar>
+        </router-link>
 
         <q-toolbar-title class="text-purple-5">
           Skill &Share
