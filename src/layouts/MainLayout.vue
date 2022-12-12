@@ -82,15 +82,15 @@ import { mapMutations } from 'vuex'
 const linksList = [
   {
     title: 'Accueil',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    caption: 'Accueil',
+    icon: 'home',
+    link: 'http://localhost:8080'
   },
   {
     title: 'Prestations',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    caption: 'Prestations',
+    icon: 'star',
+    link: 'http://localhost:8080/prestations'
   },
 ]
 
